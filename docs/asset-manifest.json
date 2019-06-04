@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.3cdb9cdf.chunk.css",
-    "main.js": "/static/js/main.4c261c76.chunk.js",
-    "main.js.map": "/static/js/main.4c261c76.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.18986f0d.chunk.js": "/static/js/2.18986f0d.chunk.js",
-    "static/js/2.18986f0d.chunk.js.map": "/static/js/2.18986f0d.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.0c06baa695fa5ea44b7e63ebbe2cb211.js": "/precache-manifest.0c06baa695fa5ea44b7e63ebbe2cb211.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.3cdb9cdf.chunk.css.map": "/static/css/main.3cdb9cdf.chunk.css.map"
+    "main.css": "/MyLittlePony/static/css/main.3cdb9cdf.chunk.css",
+    "main.js": "/MyLittlePony/static/js/main.2e910f29.chunk.js",
+    "main.js.map": "/MyLittlePony/static/js/main.2e910f29.chunk.js.map",
+    "runtime~main.js": "/MyLittlePony/static/js/runtime~main.ae7bb0ae.js",
+    "runtime~main.js.map": "/MyLittlePony/static/js/runtime~main.ae7bb0ae.js.map",
+    "static/js/2.641ab4fe.chunk.js": "/MyLittlePony/static/js/2.641ab4fe.chunk.js",
+    "static/js/2.641ab4fe.chunk.js.map": "/MyLittlePony/static/js/2.641ab4fe.chunk.js.map",
+    "index.html": "/MyLittlePony/index.html",
+    "precache-manifest.6997c2ed8a91f1d080393040030de067.js": "/MyLittlePony/precache-manifest.6997c2ed8a91f1d080393040030de067.js",
+    "service-worker.js": "/MyLittlePony/service-worker.js",
+    "static/css/main.3cdb9cdf.chunk.css.map": "/MyLittlePony/static/css/main.3cdb9cdf.chunk.css.map"
   }
 }
