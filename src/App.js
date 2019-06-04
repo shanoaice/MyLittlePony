@@ -76,48 +76,49 @@ function NoMatch() {
 
 function App() {
   const [ dark, setDark ] = useState(false);
+  const prefix = "/MyLittlePony";
   return (
     <Router>
       <Wrapper>
       <Header>
-        <h1><Link to="/" color="white" className="padded">My Little Pony</Link></h1>
+        <h1><Link to={prefix+"/"} color="white" className="padded">My Little Pony</Link></h1>
         <Button onClick={() => setDark(!dark)}>Toggle {dark?"Day Mode":"Night Mode"}</Button>
       </Header>
       <Middle>
         <LSidebar bg="black" color="white">
           <ul>
             <li>
-              <Link to="/twilight-sparkle" color="violet">Twilight Sparkle</Link>
+              <Link to={prefix+"/twilight-sparkle"} color="violet">Twilight Sparkle</Link>
             </li>
             <li>
-              <Link to="/rainbow-dash" color="skyblue">Rainbow Dash</Link>
+              <Link to={prefix+"/rainbow-dash"} color="skyblue">Rainbow Dash</Link>
             </li>
             <li>
-              <Link to="/applejack" color="orange">Applejack</Link>
+              <Link to={prefix+"/applejack"} color="orange">Applejack</Link>
             </li>
             <li>
-              <Link to="/rarity" color="purple">Rarity</Link>
+              <Link to={prefix+"/rarity"} color="purple">Rarity</Link>
             </li>
             <li>
-              <Link to="/fluttershy" color="pink">Fluttershy</Link>
+              <Link to={prefix+"/fluttershy"} color="pink">Fluttershy</Link>
             </li>
             <li>
-              <Link to="/pinkie-pie" color="palevioletred">Pinkie Pie</Link>
+              <Link to={prefix+"/pinkie-pie"} color="palevioletred">Pinkie Pie</Link>
             </li>
             <li>
-              <Link to="/spike" color="lightgreen">Spike</Link>
+              <Link to={prefix+"/spike"} color="lightgreen">Spike</Link>
             </li>
           </ul>
         </LSidebar>
         <Contnent border="blue">
-          <Route exact path="/" component={Home} />
-          <Route path="/twilight-sparkle" component={TwilightSparkle} />
-          <Route path="/rainbow-dash" component={RainbowDash} />
-          <Route path="/applejack" component={Applejack} />
-          <Route path="/rarity" component={Rarity} />
-          <Route path="/fluttershy" component={Fluttershy} />
-          <Route path="/pinkie-pie" component={PinkiePie} />
-          <Route path="/spike" component={Spike} />
+          <Route exact path={prefix+"/"} component={Home} />
+          <Route path={prefix+"/twilight-sparkle"} component={TwilightSparkle} />
+          <Route path={prefix+"/rainbow-dash"} component={RainbowDash} />
+          <Route path={prefix+"/applejack"} component={Applejack} />
+          <Route path={prefix+"/rarity"} component={Rarity} />
+          <Route path={prefix+"/fluttershy"} component={Fluttershy} />
+          <Route path={prefix+"/pinkie-pie"} component={PinkiePie} />
+          <Route path={prefix+"/spike"} component={Spike} />
           <Route component={NoMatch} />
         </Contnent>
         <RSidebar bg="palevioletred" color="blue">right sidebar</RSidebar>
