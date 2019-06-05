@@ -1,4 +1,10 @@
+# My Little Pony
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Compiled Code
+
+The compiled code is at the `docs` folder.
 
 ## Available Scripts
 

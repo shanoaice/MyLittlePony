@@ -74,6 +74,12 @@ function NoMatch() {
   return <div>No resource avaliable for this character now.</div>
 }
 
+function picture(name) {
+    return () => {
+        return <img src={`${name}.jpg`} className="shrink" />
+    }
+}
+
 function App() {
   const [ dark, setDark ] = useState(false);
   const prefix = "/MyLittlePony";
@@ -110,7 +116,7 @@ function App() {
             </li>
           </ul>
         </LSidebar>
-        <Contnent border="blue">
+        <Contnent border="blue" color={dark?"white":"black"} bg={dark?"black":"white"}>
           <Route exact path={prefix+"/"} component={Home} />
           <Route path={prefix+"/twilight-sparkle"} component={TwilightSparkle} />
           <Route path={prefix+"/rainbow-dash"} component={RainbowDash} />
@@ -119,9 +125,17 @@ function App() {
           <Route path={prefix+"/fluttershy"} component={Fluttershy} />
           <Route path={prefix+"/pinkie-pie"} component={PinkiePie} />
           <Route path={prefix+"/spike"} component={Spike} />
-          <Route component={NoMatch} />
         </Contnent>
-        <RSidebar bg="palevioletred" color="blue">right sidebar</RSidebar>
+        <RSidebar bg="palevioletred" color="blue">
+          <Route exact path={prefix+"/"} component={Home} />
+          <Route path={prefix+"/twilight-sparkle"} component={picture("Twilight Sparkle")} />
+          <Route path={prefix+"/rainbow-dash"} component={picture("Rainbow Dash")} />
+          <Route path={prefix+"/applejack"} component={picture("Applejack")} />
+          <Route path={prefix+"/rarity"} component={picture("Rarity")} />
+          <Route path={prefix+"/fluttershy"} component={picture("Fluttershy")} />
+          <Route path={prefix+"/pinkie-pie"} component={picture("Pinkie Pie")} />
+          <Route path={prefix+"/spike"} component={picture("Spike")} />
+        </RSidebar>
       </Middle>
       <Footer>Copyright@Andy Chen 2019~present</Footer>
       </Wrapper>
