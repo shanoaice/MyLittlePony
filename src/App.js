@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Wrapper, LSidebar, Contnent, Footer, Header, Middle, RSidebar, Button, Link, Title } from './Components'
 import './App.css'
+import TwilightS from './img/Twilight Sparkle.jpg'
 
 function Home() {
   return <h2>Please choose a character from the left sidebar.</h2>
@@ -75,14 +76,14 @@ function NoMatch() {
 }
 
 function picture(name) {
-    return () => {
-        return <img src={`${name}.jpg`} className="shrink" />
+    switch(name) {
+        case "Twilight Sparkle": console.log(TwilightS);return <img src={TwilightS} alt="Twilight Sparkle" />;
     }
 }
 
 function App() {
   const [ dark, setDark ] = useState(false);
-  const prefix = "/MyLittlePony";
+  const prefix = "";
   return (
     <Router>
       <Wrapper>
