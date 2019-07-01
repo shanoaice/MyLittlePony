@@ -59,7 +59,7 @@ export let Header = styled.header`
 
 export let Middle = styled(flex)`
   flex-grow: 29;
-  justify-content: space-around;  
+  justify-content: space-around;
 `
 
 export let RSidebar = styled(colored)`

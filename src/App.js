@@ -3,6 +3,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Wrapper, LSidebar, Contnent, Footer, Header, Middle, RSidebar, Button, Link, Title } from './Components'
 import './App.css'
 import TwilightS from './img/Twilight Sparkle.jpg'
+import RainbowD from './img/Rainbow Dash.jpg'
+import ApplejackI from './img/Applejack.jpg'
+import RarityI from './img/Rarity.jpg'
+import FluttershyI from './img/Fluttershy.jpg'
+import PinkieP from './img/Pinkie Pie.jpg'
+import SpikeI from './img/Spike.jpg'
 
 function Home() {
   return <h2>Please choose a character from the left sidebar.</h2>
@@ -71,13 +77,18 @@ function Spike() {
   )
 }
 
-function NoMatch() {
-  return <div>No resource avaliable for this character now.</div>
-}
-
 function picture(name) {
-    switch(name) {
-        case "Twilight Sparkle": console.log(TwilightS);return <img src={TwilightS} alt="Twilight Sparkle" />;
+    return () => {
+        switch(name) {
+            case "Twilight Sparkle": console.log(TwilightS); return <img src={TwilightS} alt="Twilight Sparkle" width="200px" />;
+            case 'Rainbow Dash': console.log(RainbowD); return <img src={RainbowD} alt="Rainbow Dash" width="200px" />;
+            case 'Applejack': console.log(ApplejackI); return <img src={ApplejackI} alt="Applejack" width="200px" />;
+            case 'Rarity': console.log(RarityI); return <img src={RarityI} alt="Rarity" width="200px" />;
+            case 'Fluttershy': console.log(FluttershyI); return <img src={FluttershyI} alt="Fluttershy" width="200px" />;
+            case 'Pinkie Pie': console.log(PinkieP); return <img src={PinkieP} alt="Pinkie Pie" width="200px" />;
+            case 'Spike': console.log(SpikeI); return <img src={SpikeI} alt="Spike" width="200px" />;
+            default: throw new Error("Unknown Image Name")
+        }
     }
 }
 

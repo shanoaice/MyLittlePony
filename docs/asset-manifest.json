@@ -1,16 +1,22 @@
 {
   "files": {
     "main.css": "/MyLittlePony/static/css/main.199d92d0.chunk.css",
-    "main.js": "/MyLittlePony/static/js/main.159cdfa2.chunk.js",
-    "main.js.map": "/MyLittlePony/static/js/main.159cdfa2.chunk.js.map",
+    "main.js": "/MyLittlePony/static/js/main.56e5a367.chunk.js",
+    "main.js.map": "/MyLittlePony/static/js/main.56e5a367.chunk.js.map",
     "runtime~main.js": "/MyLittlePony/static/js/runtime~main.ae7bb0ae.js",
     "runtime~main.js.map": "/MyLittlePony/static/js/runtime~main.ae7bb0ae.js.map",
-    "static/js/2.c4d456be.chunk.js": "/MyLittlePony/static/js/2.c4d456be.chunk.js",
-    "static/js/2.c4d456be.chunk.js.map": "/MyLittlePony/static/js/2.c4d456be.chunk.js.map",
+    "static/js/2.be8c0b6a.chunk.js": "/MyLittlePony/static/js/2.be8c0b6a.chunk.js",
+    "static/js/2.be8c0b6a.chunk.js.map": "/MyLittlePony/static/js/2.be8c0b6a.chunk.js.map",
     "index.html": "/MyLittlePony/index.html",
-    "precache-manifest.b5543cad2170b8fae22ead75a80efdb2.js": "/MyLittlePony/precache-manifest.b5543cad2170b8fae22ead75a80efdb2.js",
+    "precache-manifest.1a9f6c8b38cd8039bf50f37a87df6e53.js": "/MyLittlePony/precache-manifest.1a9f6c8b38cd8039bf50f37a87df6e53.js",
     "service-worker.js": "/MyLittlePony/service-worker.js",
     "static/css/main.199d92d0.chunk.css.map": "/MyLittlePony/static/css/main.199d92d0.chunk.css.map",
+    "static/media/Applejack.jpg": "/MyLittlePony/static/media/Applejack.398ca846.jpg",
+    "static/media/Fluttershy.jpg": "/MyLittlePony/static/media/Fluttershy.fdbbc3e8.jpg",
+    "static/media/Pinkie Pie.jpg": "/MyLittlePony/static/media/Pinkie Pie.34e31421.jpg",
+    "static/media/Rainbow Dash.jpg": "/MyLittlePony/static/media/Rainbow Dash.80064859.jpg",
+    "static/media/Rarity.jpg": "/MyLittlePony/static/media/Rarity.a08339d2.jpg",
+    "static/media/Spike.jpg": "/MyLittlePony/static/media/Spike.5bb785c5.jpg",
     "static/media/Twilight Sparkle.jpg": "/MyLittlePony/static/media/Twilight Sparkle.6abe678c.jpg"
   }
 }
