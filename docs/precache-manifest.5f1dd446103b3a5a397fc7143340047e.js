@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "44a7dd007af0e2f3027c49c29499ed8e",
+    "revision": "7c60092788f794b871524ad288f5f0d8",
     "url": "/MyLittlePony/index.html"
   },
   {
-    "revision": "1d67cd6b45802b1dbe94",
+    "revision": "3689730c671fb2dc00ae",
     "url": "/MyLittlePony/static/css/main.199d92d0.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/MyLittlePony/static/js/2.be8c0b6a.chunk.js"
   },
   {
-    "revision": "1d67cd6b45802b1dbe94",
-    "url": "/MyLittlePony/static/js/main.56e5a367.chunk.js"
+    "revision": "3689730c671fb2dc00ae",
+    "url": "/MyLittlePony/static/js/main.261c127b.chunk.js"
   },
   {
     "revision": "f4c9b7895b3d331a0abb",

@@ -94,7 +94,7 @@ function picture(name) {
 
 function App() {
   const [ dark, setDark ] = useState(false);
-  const prefix = "";
+  const prefix = "/MyLittlePony";
   return (
     <Router>
       <Wrapper>
