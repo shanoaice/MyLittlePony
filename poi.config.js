@@ -9,4 +9,16 @@ module.exports = {
       },
     },
   },
+  entry: [
+	  'src/index.jsx'
+  ],
+  // Config for Now deployment
+  output: {
+	  dir: 'public',
+	  html: {
+		  template: 'src/public/index.html',
+		  title: 'My Little Pony'
+	  },
+	  clean: false
+  }
 };
