@@ -28,7 +28,7 @@ import {
   Fluttershy,
   PinkiePie,
   Spike
-} from './components/Character'
+} from './characters'
 
 function Home() {
   return <h2>Please choose a character from the left sidebar.</h2>
