@@ -6,22 +6,31 @@
   "dependencies": {
     "htm": "^2.2.1",
     "preact": "^10.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "babel-plugin-htm": "^2.2.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.9.0",
     "eslint-config-rem": "^4.0.0",
+    "eslint-config-xo": "^0.27.2",
     "eslint-config-xo-react": "^0.20.0",
+    "eslint-plugin-ava": "^9.0.0",
+    "eslint-plugin-eslint-comments": "^3.1.2",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-unicorn": "^15.0.1",
     "husky": "^3.1.0",
     "lint-staged": "^10.0.0-beta.14",
     "poi": "^12.7.3",
     "prettier": "^1.19.1",
+    "react-devtools": "^4.3.0",
     "xo": "^0.25.3"
   },
   "main": "src/index.jsx",
@@ -32,7 +41,45 @@
   "xo": {
     "extends": [
       "rem",
-      "plugin:prettier/recomended"
+      "xo-react",
+      "plugin:prettier/recommended",
+      "prettier/react"
+    ],
+    "env": [
+      "browser"
+    ],
+    "rules": {
+      "unicorn/filename-case": [
+        "error",
+        {
+          "cases": {
+            "camelCase": true,
+            "pascalCase": true
+          }
+        }
+      ],
+      "import/no-unassigned-import": 0,
+      "react/no-unknown-property": [
+        "error",
+        {
+          "ignore": [
+            "class"
+          ]
+        }
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "xo --fix"
+    ],
+    "*.{md,json,css}": [
+      "prettier --write"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
   }
 }

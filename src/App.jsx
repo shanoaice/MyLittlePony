@@ -8,11 +8,10 @@ import {
   Contnent,
   Footer,
   Header,
-  Middle,
   RSidebar,
   Button,
   Link
-} from './components/Stuff'
+} from './utilComponents'
 import './App.css'
 import TwilightS from './img/Twilight Sparkle.jpg'
 import RainbowD from './img/Rainbow Dash.jpg'
@@ -74,89 +73,83 @@ function App() {
             Toggle {dark ? 'Day Mode' : 'Night Mode'}
           </Button>
         </Header>
-        <Middle>
-          <LSidebar bg="black" color="white">
-            <ul>
-              <li>
-                <Link to={`${prefix}/twilight-sparkle`} color="violet">
-                  Twilight Sparkle
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}/rainbow-dash`} color="skyblue">
-                  Rainbow Dash
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}/applejack`} color="orange">
-                  Applejack
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}/rarity`} color="purple">
-                  Rarity
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}/fluttershy`} color="pink">
-                  Fluttershy
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}/pinkie-pie`} color="palevioletred">
-                  Pinkie Pie
-                </Link>
-              </li>
-              <li>
-                <Link to={`${prefix}/spike`} color="lightgreen">
-                  Spike
-                </Link>
-              </li>
-            </ul>
-          </LSidebar>
-          <Contnent
-            border="blue"
-            color={dark ? 'white' : 'black'}
-            bg={dark ? 'black' : 'white'}
-          >
-            <Route exact path={`${prefix}/`} component={Home} />
-            <Route
-              path={`${prefix}/twilight-sparkle`}
-              component={TwilightSparkle}
-            />
-            <Route path={`${prefix}/rainbow-dash`} component={RainbowDash} />
-            <Route path={`${prefix}/applejack`} component={Applejack} />
-            <Route path={`${prefix}/rarity`} component={Rarity} />
-            <Route path={`${prefix}/fluttershy`} component={Fluttershy} />
-            <Route path={`${prefix}/pinkie-pie`} component={PinkiePie} />
-            <Route path={`${prefix}/spike`} component={Spike} />
-          </Contnent>
-          <RSidebar bg="palevioletred" color="blue">
-            <Route exact path={`${prefix}/`} component={Home} />
-            <Route
-              path={`${prefix}/twilight-sparkle`}
-              component={picture('Twilight Sparkle')}
-            />
-            <Route
-              path={`${prefix}/rainbow-dash`}
-              component={picture('Rainbow Dash')}
-            />
-            <Route
-              path={`${prefix}/applejack`}
-              component={picture('Applejack')}
-            />
-            <Route path={`${prefix}/rarity`} component={picture('Rarity')} />
-            <Route
-              path={`${prefix}/fluttershy`}
-              component={picture('Fluttershy')}
-            />
-            <Route
-              path={`${prefix}/pinkie-pie`}
-              component={picture('Pinkie Pie')}
-            />
-            <Route path={`${prefix}/spike`} component={picture('Spike')} />
-          </RSidebar>
-        </Middle>
+        <LSidebar bg="black" color="white">
+          <ul>
+            <li>
+              <Link to={`${prefix}/twilight-sparkle`} color="violet">
+                Twilight Sparkle
+              </Link>
+            </li>
+            <li>
+              <Link to={`${prefix}/rainbow-dash`} color="skyblue">
+                Rainbow Dash
+              </Link>
+            </li>
+            <li>
+              <Link to={`${prefix}/applejack`} color="orange">
+                Applejack
+              </Link>
+            </li>
+            <li>
+              <Link to={`${prefix}/rarity`} color="purple">
+                Rarity
+              </Link>
+            </li>
+            <li>
+              <Link to={`${prefix}/fluttershy`} color="pink">
+                Fluttershy
+              </Link>
+            </li>
+            <li>
+              <Link to={`${prefix}/pinkie-pie`} color="palevioletred">
+                Pinkie Pie
+              </Link>
+            </li>
+            <li>
+              <Link to={`${prefix}/spike`} color="lightgreen">
+                Spike
+              </Link>
+            </li>
+          </ul>
+        </LSidebar>
+        <Contnent isNight={dark}>
+          <Route exact path={`${prefix}/`} component={Home} />
+          <Route
+            path={`${prefix}/twilight-sparkle`}
+            component={TwilightSparkle}
+          />
+          <Route path={`${prefix}/rainbow-dash`} component={RainbowDash} />
+          <Route path={`${prefix}/applejack`} component={Applejack} />
+          <Route path={`${prefix}/rarity`} component={Rarity} />
+          <Route path={`${prefix}/fluttershy`} component={Fluttershy} />
+          <Route path={`${prefix}/pinkie-pie`} component={PinkiePie} />
+          <Route path={`${prefix}/spike`} component={Spike} />
+        </Contnent>
+        <RSidebar bg="palevioletred" color="blue">
+          <Route exact path={`${prefix}/`} component={Home} />
+          <Route
+            path={`${prefix}/twilight-sparkle`}
+            component={picture('Twilight Sparkle')}
+          />
+          <Route
+            path={`${prefix}/rainbow-dash`}
+            component={picture('Rainbow Dash')}
+          />
+          <Route
+            path={`${prefix}/applejack`}
+            component={picture('Applejack')}
+          />
+          <Route path={`${prefix}/rarity`} component={picture('Rarity')} />
+          <Route
+            path={`${prefix}/fluttershy`}
+            component={picture('Fluttershy')}
+          />
+          <Route
+            path={`${prefix}/pinkie-pie`}
+            component={picture('Pinkie Pie')}
+          />
+          <Route path={`${prefix}/spike`} component={picture('Spike')} />
+        </RSidebar>
         <Footer>Copyright@Andy Chen 2019~present</Footer>
       </Wrapper>
     </Router>
