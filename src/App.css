@@ -1,11 +1,11 @@
 .padded {
-    padding: 1em;
+  padding: 1em;
 }
 
 li {
-    padding: 0.5em;
+  padding: 0.5em;
 }
 
 .shrink {
-    flex-shrink: 1;
+  flex-shrink: 1;
 }

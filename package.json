@@ -28,5 +28,11 @@
   "scripts": {
     "build": "poi --prod",
     "start": "poi --serve"
+  },
+  "xo": {
+    "extends": [
+      "rem",
+      "plugin:prettier/recomended"
+    ]
   }
 }

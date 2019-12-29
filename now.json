@@ -1,5 +1,5 @@
 {
-    "version":2,
-    "alias":["acmlp.now.sh"],
-    "public": true
+  "version": 2,
+  "alias": ["acmlp.now.sh"],
+  "public": true
 }

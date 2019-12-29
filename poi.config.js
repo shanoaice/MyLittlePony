@@ -5,20 +5,18 @@ module.exports = {
       alias: {
         react: 'preact/compat',
         'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      },
-    },
+        'react-dom': 'preact/compat'
+      }
+    }
   },
-  entry: [
-	  'src/index.jsx'
-  ],
+  entry: ['src/index.jsx'],
   // Config for Now deployment
   output: {
-	  dir: 'public',
-	  html: {
-		  template: 'src/public/index.html',
-		  title: 'My Little Pony'
-	  },
-	  clean: false
+    dir: 'public',
+    html: {
+      template: 'src/public/index.html',
+      title: 'My Little Pony'
+    },
+    clean: false
   }
-};
+}
