@@ -5,10 +5,8 @@
   "private": true,
   "dependencies": {
     "htm": "^2.2.1",
-    "preact": "^10.0.5",
+    "preact": "^10.1.1",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "styled-components": "^4.4.1"
   },
@@ -65,6 +63,18 @@
           "ignore": [
             "class"
           ]
+        }
+      ],
+      "react/prop-types": [
+        "error",
+        {
+          "ignore": ["children"]
+        }
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "varsIgnorePattern": "Fragment"
         }
       ]
     }
