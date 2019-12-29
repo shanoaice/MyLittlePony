@@ -1,10 +1,11 @@
-import React from 'react'
+/** @jsx h */
+import { h } from 'preact'
 import { Title } from './utilComponents'
 
 export function TwilightSparkle() {
   return (
     <>
-      <Title color="violet">Twilight Sparkle</Title>
+      <Title color="violet" contnent="Twilight Sparkle" />
       <div>
         Twilight Sparkle is the central protagonist of the series. She is a
         purple alicorn. Her Cutie Mark is a pink hexagonal star with a white
@@ -18,7 +19,7 @@ export function TwilightSparkle() {
 export function RainbowDash() {
   return (
     <>
-      <Title color="skyblue">Rainbow Dash</Title>
+      <Title color="skyblue" contnent="Rainbow Dash" />
       <div>
         Rainbow Dash is a blue pegasus with a rainbow-colored mane and tail. Her
         Cutie Mark is a cloud with a rainbow of lightning underneath, it
@@ -31,7 +32,7 @@ export function RainbowDash() {
 export function Applejack() {
   return (
     <>
-      <Title color="orange">Applejack</Title>
+      <Title color="orange" contnent="Applejack" />
       <div>
         Applejack is an orange, blonde-haired earth pony. Her Cutie Mark is
         three apples, it represents her talent for agriculture and love for her
@@ -44,7 +45,7 @@ export function Applejack() {
 export function Rarity() {
   return (
     <>
-      <Title color="purple">Rarity</Title>
+      <Title color="purple" contnent="Rarity" />
       <div>
         Rarity is a white unicorn with a curled violet mane. Her Cutie Mark is
         three blue diamonds, it represents her talent for prospecting gemstones
@@ -57,7 +58,7 @@ export function Rarity() {
 export function Fluttershy() {
   return (
     <>
-      <Title color="pink">Fluttershy</Title>
+      <Title color="pink" contnent="Fluttershy" />
       <div>
         Fluttershy is a yellow pink-maned pegasus. Her Cutie Mark is three pink
         butterflies, it represents her love of nature and talent as an animal
@@ -70,7 +71,7 @@ export function Fluttershy() {
 export function PinkiePie() {
   return (
     <>
-      <Title color="palevioletred">Pinkie Pie</Title>
+      <Title color="palevioletred" contnent="Pinkie Pie" />
       <div>
         Pinkie Pie is a pink earth pony. Her Cutie Mark is one yellow ballon
         between two blue ballons, it represents her talent for spreading hope
@@ -83,11 +84,12 @@ export function PinkiePie() {
 export function Spike() {
   return (
     <>
-      <Title color="lightgreen">Spike</Title>
+      <Title color="lightgreen" contnent="Spike" />
       <div>
         Spike is a purple baby dragon with green spines. He fulfills the role of
-        Twilight's "number one assistant" to which he is named so for his
-        loyalty and skill at helping Twilight solve problems and learn lessons.
+        Twilight&apos;s &quot;number one assistant&quot; to which he is named so
+        for his loyalty and skill at helping Twilight solve problems and learn
+        lessons.
       </div>
     </>
   )

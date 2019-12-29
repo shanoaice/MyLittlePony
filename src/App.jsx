@@ -1,5 +1,5 @@
 /** @jsx h */
-import { h } from 'preact'
+import { h, Fragment } from 'preact'
 import { useState } from 'preact/hooks'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import {
@@ -58,19 +58,20 @@ function picture(name) {
 }
 
 function App() {
-  const [dark, setDark] = useState(false)
+  const [night, toggleNight] = useState(false)
+  window.toggleNight = toggleNight
   const prefix = ''
   return (
     <Router>
       <Wrapper>
         <Header>
           <h1>
-            <Link to={`${prefix}/`} color="white" className="padded">
+            <Link to={`${prefix}/`} color="white">
               My Little Pony
             </Link>
           </h1>
-          <Button onClick={() => setDark(!dark)}>
-            Toggle {dark ? 'Day Mode' : 'Night Mode'}
+          <Button onClick={() => toggleNight(!night)}>
+            Toggle {night ? 'Day Mode' : 'Night Mode'}
           </Button>
         </Header>
         <LSidebar bg="black" color="white">
@@ -112,7 +113,7 @@ function App() {
             </li>
           </ul>
         </LSidebar>
-        <Contnent isNight={dark}>
+        <Contnent isNight={night}>
           <Route exact path={`${prefix}/`} component={Home} />
           <Route
             path={`${prefix}/twilight-sparkle`}

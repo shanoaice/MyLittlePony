@@ -1,23 +1,38 @@
+/** @jsx h */
 import { Link as RouterLink } from 'react-router-dom'
-import React from 'react'
+import { h } from 'preact'
 import propTypes from 'prop-types'
 import styles from './layouts.module.css'
 
-export const Wrapper = function() {
-  return <div className={styles.wrapper} />
+export const Wrapper = function({ children }) {
+  return <div className={styles.wrapper}>{children}</div>
 }
 
-export const Button = function() {
-  return <button type="button" className={styles.button} />
-}
-
-export const Header = function() {
-  return <header className={styles.header} />
-}
-
-export const Contnent = function({ isNight }) {
+export const Button = function({ children, onClick }) {
   return (
-    <main className={`${styles.main} ${isNight ? styles.night : styles.day}`} />
+    <button type="button" className={styles.button} onClick={onClick}>
+      {children}
+    </button>
+  )
+}
+
+Button.propTypes = {
+  onClick: propTypes.func
+}
+
+Button.defaultProps = {
+  onClick: () => {}
+}
+
+export const Header = function({ children }) {
+  return <header className={`${styles.header} padded`}>{children}</header>
+}
+
+export const Contnent = function({ isNight, children }) {
+  return (
+    <main className={`${styles.main} ${isNight ? styles.night : styles.day}`}>
+      {children}
+    </main>
   )
 }
 
@@ -29,28 +44,33 @@ Contnent.defaultProps = {
   isNight: false
 }
 
-export const LSidebar = function() {
-  return <div className={styles.left} />
+export const LSidebar = function({ children }) {
+  return <div className={styles.left}>{children}</div>
 }
 
-export const RSidebar = function() {
-  return <div className={styles.right} />
+export const RSidebar = function({ children }) {
+  return <div className={styles.right}>{children}</div>
 }
 
-export const Footer = function() {
-  return <footer className={styles.footer} />
+export const Footer = function({ children }) {
+  return <footer className={styles.footer}>{children}</footer>
 }
 
-export const Link = function({ color }) {
-  return <RouterLink className={styles.link} style={`color: ${color}`} />
+export const Link = function({ color, children, to }) {
+  return (
+    <RouterLink className={styles.link} style={`color: ${color}`} to={to}>
+      {children}
+    </RouterLink>
+  )
 }
 
 Link.propTypes = {
-  color: propTypes.string.isRequired
+  color: propTypes.string.isRequired,
+  to: propTypes.string.isRequired
 }
 
-export const Title = function({ color }) {
-  return <h1 style={`color: ${color}`} />
+export const Title = function({ color, children }) {
+  return <h1 style={`color: ${color}`}>{children}</h1>
 }
 
 Title.propTypes = {

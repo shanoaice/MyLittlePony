@@ -1,10 +1,5 @@
-/* eslint-disable import/first */
 /** @jsx h */
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
-  require('preact/debug')
-}
-
+import 'preact/debug'
 import { render, h } from 'preact'
 import './index.css'
 import App from './App'
