@@ -10,7 +10,8 @@ import {
   Header,
   RSidebar,
   Button,
-  Link
+  Link,
+  LinkList
 } from './utilComponents'
 import './App.css'
 import TwilightS from './img/Twilight Sparkle.jpg'
@@ -76,41 +77,45 @@ function App() {
         </Header>
         <LSidebar>
           <ul>
-            <li>
-              <Link to={`${prefix}/twilight-sparkle`} color="violet">
-                Twilight Sparkle
-              </Link>
-            </li>
-            <li>
-              <Link to={`${prefix}/rainbow-dash`} color="skyblue">
-                Rainbow Dash
-              </Link>
-            </li>
-            <li>
-              <Link to={`${prefix}/applejack`} color="orange">
-                Applejack
-              </Link>
-            </li>
-            <li>
-              <Link to={`${prefix}/rarity`} color="purple">
-                Rarity
-              </Link>
-            </li>
-            <li>
-              <Link to={`${prefix}/fluttershy`} color="pink">
-                Fluttershy
-              </Link>
-            </li>
-            <li>
-              <Link to={`${prefix}/pinkie-pie`} color="palevioletred">
-                Pinkie Pie
-              </Link>
-            </li>
-            <li>
-              <Link to={`${prefix}/spike`} color="lightgreen">
-                Spike
-              </Link>
-            </li>
+            <LinkList
+              listProperty={[
+                {
+                  to: `${prefix}/twilight-sparkle`,
+                  color: 'violet',
+                  contnent: 'Twilight Sparkle'
+                },
+                {
+                  to: `${prefix}/rainbow-dash`,
+                  color: 'skyblue',
+                  contnent: 'Rainbow Dash'
+                },
+                {
+                  to: `${prefix}/applejack`,
+                  color: 'orange',
+                  contnent: 'Applejack'
+                },
+                {
+                  to: `${prefix}/rarity`,
+                  color: 'purple',
+                  contnent: 'Rarity'
+                },
+                {
+                  to: `${prefix}/fluttershy`,
+                  color: 'pink',
+                  contnent: 'Fluttershy'
+                },
+                {
+                  to: `${prefix}/pinkie-pie`,
+                  color: 'palevioletred',
+                  contnent: 'Pinkie Pie'
+                },
+                {
+                  to: `${prefix}/spike`,
+                  color: 'lightgreen',
+                  contnent: 'Spike'
+                }
+              ]}
+            />
           </ul>
         </LSidebar>
         <Contnent isNight={night}>

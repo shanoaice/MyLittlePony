@@ -76,7 +76,8 @@
         {
           "varsIgnorePattern": "Fragment"
         }
-      ]
+      ],
+      "react/no-array-index-key": 0
     }
   },
   "lint-staged": {

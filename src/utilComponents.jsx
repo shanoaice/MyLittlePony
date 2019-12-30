@@ -1,6 +1,6 @@
 /** @jsx h */
 import { Link as RouterLink } from 'react-router-dom'
-import { h } from 'preact'
+import { h, Fragment } from 'preact'
 import propTypes from 'prop-types'
 import styles from './layouts.module.css'
 
@@ -75,4 +75,25 @@ export const Title = function({ color, children }) {
 
 Title.propTypes = {
   color: propTypes.string.isRequired
+}
+
+export const LinkList = function({ listProperty }) {
+  return (
+    <>
+      {listProperty.map((listProps, key) => {
+        const { to, color, contnent } = listProps
+        return (
+          <li key={key}>
+            <Link to={to} color={color}>
+              {contnent}
+            </Link>
+          </li>
+        )
+      })}
+    </>
+  )
+}
+
+LinkList.propTypes = {
+  listProperty: propTypes.array.isRequired
 }
