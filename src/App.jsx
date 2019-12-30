@@ -11,7 +11,8 @@ import {
   RSidebar,
   Button,
   Link,
-  LinkList
+  LinkList,
+  RouteList
 } from './utilComponents'
 import './App.css'
 import TwilightS from './img/Twilight Sparkle.jpg'
@@ -35,26 +36,21 @@ function Home() {
   return <h2>Please choose a character from the left sidebar.</h2>
 }
 
+const pictures = {
+  'Twilight Sparkle': (
+    <img src={TwilightS} alt="Twilight Sparkle" width={200} />
+  ),
+  'Rainbow Dash': <img src={RainbowD} alt="Rainbow Dash" width={200} />,
+  Applejack: <img src={ApplejackI} alt="Applejack" width={200} />,
+  Rarity: <img src={RarityI} alt="Rarity" width={200} />,
+  Fluttershy: <img src={FluttershyI} alt="Fluttershy" width={200} />,
+  'Pinkie Pie': <img src={PinkieP} alt="Pinkie Pie" width={200} />,
+  Spike: <img src={SpikeI} alt="Spike" width={200} />
+}
+
 function picture(name) {
   return () => {
-    switch (name) {
-      case 'Twilight Sparkle':
-        return <img src={TwilightS} alt="Twilight Sparkle" width={200} />
-      case 'Rainbow Dash':
-        return <img src={RainbowD} alt="Rainbow Dash" width={200} />
-      case 'Applejack':
-        return <img src={ApplejackI} alt="Applejack" width={200} />
-      case 'Rarity':
-        return <img src={RarityI} alt="Rarity" width={200} />
-      case 'Fluttershy':
-        return <img src={FluttershyI} alt="Fluttershy" width={200} />
-      case 'Pinkie Pie':
-        return <img src={PinkieP} alt="Pinkie Pie" width={200} />
-      case 'Spike':
-        return <img src={SpikeI} alt="Spike" width={200} />
-      default:
-        throw new Error('Unknown Image Name')
-    }
+    return pictures[name]
   }
 }
 
@@ -120,41 +116,73 @@ function App() {
         </LSidebar>
         <Contnent isNight={night}>
           <Route exact path={`${prefix}/`} component={Home} />
-          <Route
-            path={`${prefix}/twilight-sparkle`}
-            component={TwilightSparkle}
+          <RouteList
+            route={[
+              {
+                path: `${prefix}/twilight-sparkle`,
+                component: TwilightSparkle
+              },
+              {
+                path: `${prefix}/rainbow-dash`,
+                component: RainbowDash
+              },
+              {
+                path: `${prefix}/applejack`,
+                component: Applejack
+              },
+              {
+                path: `${prefix}/rarity`,
+                component: Rarity
+              },
+              {
+                path: `${prefix}/fluttershy`,
+                component: Fluttershy
+              },
+              {
+                path: `${prefix}/pinkie-pie`,
+                component: PinkiePie
+              },
+              {
+                path: `${prefix}/spike`,
+                component: Spike
+              }
+            ]}
           />
-          <Route path={`${prefix}/rainbow-dash`} component={RainbowDash} />
-          <Route path={`${prefix}/applejack`} component={Applejack} />
-          <Route path={`${prefix}/rarity`} component={Rarity} />
-          <Route path={`${prefix}/fluttershy`} component={Fluttershy} />
-          <Route path={`${prefix}/pinkie-pie`} component={PinkiePie} />
-          <Route path={`${prefix}/spike`} component={Spike} />
         </Contnent>
         <RSidebar>
           <Route exact path={`${prefix}/`} component={Home} />
-          <Route
-            path={`${prefix}/twilight-sparkle`}
-            component={picture('Twilight Sparkle')}
+          <RouteList
+            route={[
+              {
+                path: `${prefix}/twilight-sparkle`,
+                component: picture('Twilight Sparkle')
+              },
+              {
+                path: `${prefix}/rainbow-dash`,
+                component: picture('Rainbow Dash')
+              },
+              {
+                path: `${prefix}/applejack`,
+                component: picture('Applejack')
+              },
+              {
+                path: `${prefix}/rarity`,
+                component: picture('Rarity')
+              },
+              {
+                path: `${prefix}/fluttershy`,
+                component: picture('Fluttershy')
+              },
+              {
+                path: `${prefix}/pinkie-pie`,
+                component: picture('Pinkie Pie')
+              },
+              {
+                path: `${prefix}/spike`,
+                component: picture('Spike')
+              }
+            ]}
           />
-          <Route
-            path={`${prefix}/rainbow-dash`}
-            component={picture('Rainbow Dash')}
-          />
-          <Route
-            path={`${prefix}/applejack`}
-            component={picture('Applejack')}
-          />
-          <Route path={`${prefix}/rarity`} component={picture('Rarity')} />
-          <Route
-            path={`${prefix}/fluttershy`}
-            component={picture('Fluttershy')}
-          />
-          <Route
-            path={`${prefix}/pinkie-pie`}
-            component={picture('Pinkie Pie')}
-          />
-          <Route path={`${prefix}/spike`} component={picture('Spike')} />
         </RSidebar>
         <Footer>Copyright@Andy Chen 2019~present</Footer>
       </Wrapper>

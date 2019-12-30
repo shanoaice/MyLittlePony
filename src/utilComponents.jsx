@@ -1,5 +1,5 @@
 /** @jsx h */
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, Route } from 'react-router-dom'
 import { h, Fragment } from 'preact'
 import propTypes from 'prop-types'
 import styles from './layouts.module.css'
@@ -56,7 +56,7 @@ export const Footer = function({ children }) {
   return <footer className={styles.footer}>{children}</footer>
 }
 
-const Link = function({ color, children, to }) {
+export const Link = function({ color, children, to }) {
   return (
     <RouterLink className={styles.link} style={`color: ${color}`} to={to}>
       {children}
@@ -96,4 +96,19 @@ export const LinkList = function({ listProperty }) {
 
 LinkList.propTypes = {
   listProperty: propTypes.array.isRequired
+}
+
+export const RouteList = function({ route }) {
+  return (
+    <>
+      {route.map((route, key) => {
+        const { path, component } = route
+        return <Route key={key} path={path} component={component} />
+      })}
+    </>
+  )
+}
+
+RouteList.propTypes = {
+  route: propTypes.array.isRequired
 }
