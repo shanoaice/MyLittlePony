@@ -56,7 +56,7 @@ export const Footer = function({ children }) {
   return <footer className={styles.footer}>{children}</footer>
 }
 
-export const Link = function({ color, children, to }) {
+const Link = function({ color, children, to }) {
   return (
     <RouterLink className={styles.link} style={`color: ${color}`} to={to}>
       {children}
