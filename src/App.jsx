@@ -74,7 +74,7 @@ function App() {
             Toggle {night ? 'Day Mode' : 'Night Mode'}
           </Button>
         </Header>
-        <LSidebar bg="black" color="white">
+        <LSidebar>
           <ul>
             <li>
               <Link to={`${prefix}/twilight-sparkle`} color="violet">
@@ -126,7 +126,7 @@ function App() {
           <Route path={`${prefix}/pinkie-pie`} component={PinkiePie} />
           <Route path={`${prefix}/spike`} component={Spike} />
         </Contnent>
-        <RSidebar bg="palevioletred" color="blue">
+        <RSidebar>
           <Route exact path={`${prefix}/`} component={Home} />
           <Route
             path={`${prefix}/twilight-sparkle`}
