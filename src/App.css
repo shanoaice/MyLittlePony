@@ -10,3 +10,7 @@ li {
 .shrink {
   flex-shrink: 1;
 }
+
+img {
+  width: 200px;
+}

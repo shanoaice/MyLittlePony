@@ -1,8 +1,22 @@
+// @flow
 /** @jsx h */
 import { Link as RouterLink, Route } from 'react-router-dom'
 import { h, Fragment } from 'preact'
 import propTypes from 'prop-types'
-import styles from './layouts.module.css'
+import characterHOC from './character'
+import image from './images'
+import styles from './layouts.module.scss'
+
+type ListProps = {
+  to: string,
+  color?: string,
+  contnent: string
+}
+
+type RouteConfig = {
+  path: string,
+  character: string
+}
 
 export const Wrapper = function({ children }) {
   return <div className={styles.wrapper}>{children}</div>
@@ -69,7 +83,7 @@ Link.propTypes = {
   to: propTypes.string.isRequired
 }
 
-export const Title = function({ color, children }) {
+export const Title = function({ color = 'inherit', children }) {
   return <h1 style={`color: ${color}`}>{children}</h1>
 }
 
@@ -79,18 +93,18 @@ Title.propTypes = {
 
 export const LinkList = function({ listProperty }) {
   return (
-    <>
-      {listProperty.map((listProps, key) => {
-        const { to, color, contnent } = listProps
+    <Fragment>
+      {listProperty.map((listProps: ListProps, key: number) => {
+        const { path, color = 'white', character } = listProps
         return (
           <li key={key}>
-            <Link to={to} color={color}>
-              {contnent}
+            <Link to={path} color={color}>
+              {character}
             </Link>
           </li>
         )
       })}
-    </>
+    </Fragment>
   )
 }
 
@@ -98,17 +112,67 @@ LinkList.propTypes = {
   listProperty: propTypes.array.isRequired
 }
 
-export const RouteList = function({ route }) {
+export const CharacterRouteList = function({ route }) {
   return (
-    <>
+    <Fragment>
       {route.map((route, key) => {
-        const { path, component } = route
-        return <Route key={key} path={path} component={component} />
+        const { path, character } = route
+        return (
+          <Route key={key} path={path} component={characterHOC(character)} />
+        )
       })}
-    </>
+    </Fragment>
   )
 }
 
-RouteList.propTypes = {
+CharacterRouteList.propTypes = {
   route: propTypes.array.isRequired
+}
+
+export const ImageRouteList = function({ route }) {
+  return (
+    <Fragment>
+      {route.map((route: RouteConfig, key: number) => {
+        const { path, character } = route
+        return <Route key={key} path={path} component={image(character)} />
+      })}
+    </Fragment>
+  )
+}
+
+ImageRouteList.propTypes = {
+  route: propTypes.array.isRequired
+}
+
+export const RainbowTitle = function({ children }) {
+  return (
+    <h1 class={styles.rainbow}>
+      {children}
+      <span data-text={children} />
+      <span data-text={children} />
+      <span data-text={children} />
+      <span data-text={children} />
+    </h1>
+  )
+}
+
+RainbowTitle.propTypes = {
+  children: propTypes.string.isRequired
+}
+
+export const RainbowLink = function({ to, children }) {
+  return (
+    <RouterLink class={`${styles.rainbow} ${styles.link}`} to={to}>
+      {children}
+      <span data-text={children} />
+      <span data-text={children} />
+      <span data-text={children} />
+      <span data-text={children} />
+    </RouterLink>
+  )
+}
+
+RainbowLink.propTypes = {
+  to: propTypes.string.isRequired,
+  children: propTypes.string.isRequired
 }
