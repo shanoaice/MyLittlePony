@@ -12,18 +12,17 @@ The compiled code is at the `public` folder.
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run dev` or `yarn dev`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 
 The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm run build`
+### `npm run build` or `yarn build`
 
 Builds the app for production to the `public` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It correctly bundles Preact in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
