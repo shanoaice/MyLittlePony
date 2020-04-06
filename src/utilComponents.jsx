@@ -1,4 +1,3 @@
-// @flow
 /** @jsx h */
 import { Link as RouterLink, Route } from 'react-router-dom'
 import { h, Fragment } from 'preact'
@@ -6,17 +5,6 @@ import propTypes from 'prop-types'
 import characterHOC from './character'
 import image from './images'
 import styles from './layouts.module.scss'
-
-type ListProps = {
-  to: string,
-  color?: string,
-  contnent: string
-}
-
-type RouteConfig = {
-  path: string,
-  character: string
-}
 
 export const Wrapper = function({ children }) {
   return <div className={styles.wrapper}>{children}</div>
@@ -94,9 +82,10 @@ Title.propTypes = {
 export const LinkList = function({ listProperty }) {
   return (
     <Fragment>
-      {listProperty.map((listProps: ListProps, key: number) => {
+      {listProperty.map((listProps, key) => {
         const { path, color = 'white', character } = listProps
         return (
+          // eslint-disable-next-line react/no-array-index-key
           <li key={key}>
             <Link to={path} color={color}>
               {character}
@@ -118,6 +107,7 @@ export const CharacterRouteList = function({ route }) {
       {route.map((route, key) => {
         const { path, character } = route
         return (
+          // eslint-disable-next-line react/no-array-index-key
           <Route key={key} path={path} component={characterHOC(character)} />
         )
       })}
@@ -132,8 +122,9 @@ CharacterRouteList.propTypes = {
 export const ImageRouteList = function({ route }) {
   return (
     <Fragment>
-      {route.map((route: RouteConfig, key: number) => {
+      {route.map((route, key) => {
         const { path, character } = route
+        // eslint-disable-next-line react/no-array-index-key
         return <Route key={key} path={path} component={image(character)} />
       })}
     </Fragment>

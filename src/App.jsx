@@ -1,4 +1,3 @@
-// @flow
 /** @jsx h */
 import { h, Fragment } from 'preact'
 import { useState } from 'preact/hooks'
@@ -147,7 +146,7 @@ function App() {
           <Route exact path={`${prefix}/`} component={Home} />
           <ImageRouteList route={characters} />
         </RSidebar>
-        <Footer>Copyright@Andy Chen 2019~present</Footer>
+        <Footer>Copyright@Andy Chen 2019-2020</Footer>
       </Wrapper>
     </Router>
   )

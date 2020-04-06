@@ -1,19 +1,8 @@
-// @flow
 /** @jsx h */
 import { h, Fragment } from 'preact'
 import { Title, RainbowTitle } from './utilComponents'
 
-type characterObject = {
-  description: string,
-  color?: string,
-  rainbow?: boolean
-}
-
-type characterListType = {
-  [string]: characterObject
-}
-
-const characterList: characterListType = {
+const characterList = {
   'Twilight Sparkle': {
     description:
       'Twilight Sparkle is the central protagonist of the series. She is a purple alicorn. Her Cutie Mark is a pink hexagonal star with a white large hexagonal star inside, surrounded by five white small hexagonal stars, it represents her talent for magic and love for astronomy.',
@@ -103,7 +92,7 @@ const characterList: characterListType = {
   }
 }
 
-export default function(name: string): function {
+export default function(name) {
   const { description, color = 'inherit', rainbow } = characterList[name]
   if (rainbow) {
     return () => {

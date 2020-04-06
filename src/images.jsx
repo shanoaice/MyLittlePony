@@ -1,4 +1,3 @@
-// @flow
 /** @jsx h */
 import { h } from 'preact'
 import TwilightSparkle from './img/Twilight Sparkle.jpg'
@@ -47,7 +46,7 @@ const pictures = {
   Discord
 }
 
-export default function(name: string): function {
+export default function(name) {
   return () => {
     return <img src={pictures[name]} alt={name} />
   }
