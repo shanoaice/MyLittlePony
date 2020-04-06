@@ -118,8 +118,17 @@ const characters = [
   }
 ]
 
+function isNightTime() {
+  const currentTime = new Date()
+  const currentHour = currentTime.getHours()
+
+  return currentHour >= 18 || currentHour <= 6
+}
+
 function App() {
-  const [night, toggleNight] = useState(false)
+  const nightMode = isNightTime()
+
+  const [night, toggleNight] = useState(nightMode)
   return (
     <Router>
       <Wrapper>
