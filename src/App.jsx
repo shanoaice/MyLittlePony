@@ -13,110 +13,17 @@ import {
   Link,
   LinkList,
   CharacterRouteList,
-  ImageRouteList
+  ImageRouteList,
 } from './utilComponents'
+import { getCharacterInfoList } from './characterInfo'
+import { FiMoon, FiSun } from 'react-icons/fi'
 import './App.css'
 
 const prefix = ''
 
-function Home() {
+const Home = () => {
   return <h2>Please choose a character from the left sidebar.</h2>
 }
-
-const characters = [
-  {
-    path: `${prefix}/twilight-sparkle`,
-    color: 'violet',
-    character: 'Twilight Sparkle'
-  },
-  {
-    path: `${prefix}/rainbow-dash`,
-    color: 'skyblue',
-    character: 'Rainbow Dash'
-  },
-  {
-    path: `${prefix}/applejack`,
-    color: 'orange',
-    character: 'Applejack'
-  },
-  {
-    path: `${prefix}/rarity`,
-    color: 'purple',
-    character: 'Rarity'
-  },
-  {
-    path: `${prefix}/fluttershy`,
-    color: 'pink',
-    character: 'Fluttershy'
-  },
-  {
-    path: `${prefix}/pinkie-pie`,
-    color: 'palevioletred',
-    character: 'Pinkie Pie'
-  },
-  {
-    path: `${prefix}/spike`,
-    color: 'lightgreen',
-    character: 'Spike'
-  },
-  {
-    path: `${prefix}/starlight-glimmer`,
-    character: 'Starlight Glimmer',
-    color: 'rgb(125,0,255)'
-  },
-  {
-    path: `${prefix}/princess-celestia`,
-    character: 'Princess Celestia'
-  },
-  {
-    path: `${prefix}/princess-luna`,
-    character: 'Princess Luna'
-  },
-  {
-    path: `${prefix}/princess-cadance`,
-    character: 'Princess Cadance'
-  },
-  {
-    path: `${prefix}/shining-armor`,
-    character: `Shining Armor`
-  },
-  {
-    path: `${prefix}/flurry-heart`,
-    character: 'Flurry Heart'
-  },
-  {
-    path: `${prefix}/apple-bloom`,
-    character: 'Apple Bloom'
-  },
-  {
-    path: `${prefix}/sweetie-belle`,
-    character: 'Sweetie Belle'
-  },
-  {
-    path: `${prefix}/scootaloo`,
-    character: 'Scootaloo'
-  },
-  {
-    path: `${prefix}/big-mac`,
-    character: 'Big Mac'
-  },
-  {
-    path: `${prefix}/trixie`,
-    character: 'Trixie'
-  },
-  {
-    path: `${prefix}/diamond-tiara`,
-    character: 'Diamond Tiara'
-  },
-  {
-    path: `${prefix}/silver-spoon`,
-    character: 'Silver Spoon'
-  },
-  {
-    path: `${prefix}/discord`,
-    character: 'Discord'
-  }
-]
 
 function isNightTime() {
   const currentTime = new Date()
@@ -125,7 +32,7 @@ function isNightTime() {
   return currentHour >= 18 || currentHour <= 6
 }
 
-function App() {
+const App = () => {
   const nightMode = isNightTime()
 
   const [night, toggleNight] = useState(nightMode)
@@ -139,21 +46,21 @@ function App() {
             </Link>
           </h1>
           <Button onClick={() => toggleNight(!night)}>
-            Toggle {night ? 'Day Mode' : 'Night Mode'}
+            {night ? <FiSun /> : <FiMoon />}
           </Button>
         </Header>
         <LSidebar>
           <ul>
-            <LinkList listProperty={characters} />
+            <LinkList listProperty={getCharacterInfoList(prefix)} />
           </ul>
         </LSidebar>
         <Contnent isNight={night}>
           <Route exact path={`${prefix}/`} component={Home} />
-          <CharacterRouteList route={characters} />
+          <CharacterRouteList route={getCharacterInfoList(prefix)} />
         </Contnent>
         <RSidebar>
           <Route exact path={`${prefix}/`} component={Home} />
-          <ImageRouteList route={characters} />
+          <ImageRouteList route={getCharacterInfoList(prefix)} />
         </RSidebar>
         <Footer>Copyright@Andy Chen 2019-2020</Footer>
       </Wrapper>

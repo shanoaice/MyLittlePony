@@ -4,32 +4,26 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "fontsource-roboto": "^2.2.3",
     "preact": "^10.1.1",
     "prop-types": "^15.7.2",
+    "react-icons": "^3.10.0",
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-config-rem": "^4.0.0",
-    "eslint-config-xo": "^0.27.2",
-    "eslint-config-xo-react": "^0.20.0",
-    "eslint-plugin-ava": "^9.0.0",
-    "eslint-plugin-eslint-comments": "^3.1.2",
-    "eslint-plugin-flowtype": "^4.5.2",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "eslint-plugin-unicorn": "^15.0.1",
-    "husky": "^3.1.0",
-    "lint-staged": "^10.0.0-beta.14",
-    "node-sass": "^4.13.0",
-    "poi": "^12.7.3",
-    "prettier": "^1.19.1",
-    "sass-loader": "^8.0.0",
-    "xo": "^0.25.3"
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "node-sass": "^4.14.1",
+    "poi": "^12.9.0",
+    "prettier": "^2.0.5",
+    "sass-loader": "^9.0.2",
+    "xo": "^0.32.1"
   },
   "main": "src/index.jsx",
   "scripts": {
@@ -79,7 +73,10 @@
         {
           "varsIgnorePattern": "Fragment"
         }
-      ]
+      ],
+      "react/jsx-no-useless-fragment": 0,
+      "import/extensions": 0,
+      "import/no-anonymous-default-export": 0
     }
   },
   "lint-staged": {

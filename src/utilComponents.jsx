@@ -6,11 +6,11 @@ import characterHOC from './character'
 import image from './images'
 import styles from './layouts.module.scss'
 
-export const Wrapper = function({ children }) {
+export const Wrapper = ({ children }) => {
   return <div className={styles.wrapper}>{children}</div>
 }
 
-export const Button = function({ children, onClick }) {
+export const Button = ({ children, onClick }) => {
   return (
     <button type="button" className={styles.button} onClick={onClick}>
       {children}
@@ -19,18 +19,18 @@ export const Button = function({ children, onClick }) {
 }
 
 Button.propTypes = {
-  onClick: propTypes.func
+  onClick: propTypes.func,
 }
 
 Button.defaultProps = {
-  onClick: () => {}
+  onClick: () => {},
 }
 
-export const Header = function({ children }) {
+export const Header = ({ children }) => {
   return <header className={`${styles.header} padded`}>{children}</header>
 }
 
-export const Contnent = function({ isNight, children }) {
+export const Contnent = ({ isNight, children }) => {
   return (
     <main className={`${styles.main} ${isNight ? styles.night : styles.day}`}>
       {children}
@@ -39,26 +39,26 @@ export const Contnent = function({ isNight, children }) {
 }
 
 Contnent.propTypes = {
-  isNight: propTypes.bool
+  isNight: propTypes.bool,
 }
 
 Contnent.defaultProps = {
-  isNight: false
+  isNight: false,
 }
 
-export const LSidebar = function({ children }) {
+export const LSidebar = ({ children }) => {
   return <div className={styles.left}>{children}</div>
 }
 
-export const RSidebar = function({ children }) {
+export const RSidebar = ({ children }) => {
   return <div className={styles.right}>{children}</div>
 }
 
-export const Footer = function({ children }) {
+export const Footer = ({ children }) => {
   return <footer className={styles.footer}>{children}</footer>
 }
 
-export const Link = function({ color, children, to }) {
+export const Link = ({ color, children, to }) => {
   return (
     <RouterLink className={styles.link} style={`color: ${color}`} to={to}>
       {children}
@@ -68,22 +68,22 @@ export const Link = function({ color, children, to }) {
 
 Link.propTypes = {
   color: propTypes.string.isRequired,
-  to: propTypes.string.isRequired
+  to: propTypes.string.isRequired,
 }
 
-export const Title = function({ color = 'inherit', children }) {
+export const Title = ({ color = 'inherit', children }) => {
   return <h1 style={`color: ${color}`}>{children}</h1>
 }
 
 Title.propTypes = {
-  color: propTypes.string.isRequired
+  color: propTypes.string.isRequired,
 }
 
-export const LinkList = function({ listProperty }) {
+export const LinkList = ({ listProperty }) => {
   return (
     <Fragment>
       {listProperty.map((listProps, key) => {
-        const { path, color = 'white', character } = listProps
+        const { path, color = 'black', character } = listProps
         return (
           // eslint-disable-next-line react/no-array-index-key
           <li key={key}>
@@ -98,10 +98,10 @@ export const LinkList = function({ listProperty }) {
 }
 
 LinkList.propTypes = {
-  listProperty: propTypes.array.isRequired
+  listProperty: propTypes.array.isRequired,
 }
 
-export const CharacterRouteList = function({ route }) {
+export const CharacterRouteList = ({ route }) => {
   return (
     <Fragment>
       {route.map((route, key) => {
@@ -116,10 +116,10 @@ export const CharacterRouteList = function({ route }) {
 }
 
 CharacterRouteList.propTypes = {
-  route: propTypes.array.isRequired
+  route: propTypes.array.isRequired,
 }
 
-export const ImageRouteList = function({ route }) {
+export const ImageRouteList = ({ route }) => {
   return (
     <Fragment>
       {route.map((route, key) => {
@@ -132,10 +132,10 @@ export const ImageRouteList = function({ route }) {
 }
 
 ImageRouteList.propTypes = {
-  route: propTypes.array.isRequired
+  route: propTypes.array.isRequired,
 }
 
-export const RainbowTitle = function({ children }) {
+export const RainbowTitle = ({ children }) => {
   return (
     <h1 class={styles.rainbow}>
       {children}
@@ -148,10 +148,10 @@ export const RainbowTitle = function({ children }) {
 }
 
 RainbowTitle.propTypes = {
-  children: propTypes.string.isRequired
+  children: propTypes.string.isRequired,
 }
 
-export const RainbowLink = function({ to, children }) {
+export const RainbowLink = ({ to, children }) => {
   return (
     <RouterLink class={`${styles.rainbow} ${styles.link}`} to={to}>
       {children}
@@ -165,5 +165,5 @@ export const RainbowLink = function({ to, children }) {
 
 RainbowLink.propTypes = {
   to: propTypes.string.isRequired,
-  children: propTypes.string.isRequired
+  children: propTypes.string.isRequired,
 }

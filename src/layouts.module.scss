@@ -2,12 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 2fr 10fr 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   grid-template-areas: 'header header header' 'left main right' 'footer footer footer';
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  min-height: 100vh;
-  max-height: 100vh;
+  font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+    sans-serif;
+  min-height: calc(100vh - 20px);
+  max-height: calc(100vh - 20px);
+  margin: 10px;
 }
 
 .header {
@@ -17,18 +19,36 @@
   align-items: center;
   color: white;
   background: #606060;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #888888;
 }
 
 .left {
   grid-area: left;
-  background-color: black;
+  background-color: #c0c0dd;
   overflow: auto;
+  &::-webkit-scrollbar {
+    width: 16px;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgb(185, 187, 196);
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(135, 124, 139);
+    border-radius: 10px;
+  }
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #888888;
 }
 
 .main {
   grid-area: main;
   border: 2px solid blue;
   padding: 1em 2em;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #888888;
 }
 
 .right {
@@ -38,6 +58,8 @@
   display: flex;
   background-color: palevioletred;
   color: blue;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #888888;
 }
 
 .footer {
@@ -47,15 +69,18 @@
   align-items: center;
   background: #606060;
   color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #888888;
 }
 
 .button {
   color: palevioletred;
   font-size: 1em;
   margin: 1em;
-  padding: 0.5em 0.75em;
-  border: 2px solid palevioletred;
-  border-radius: 4px;
+  padding: 8.5px 10px 6.5px;
+  border: 3px solid palevioletred;
+  border-radius: 100%;
+  text-align: center;
 }
 
 .link {
@@ -64,13 +89,13 @@
 }
 
 .day {
-  color: black;
-  background-color: white;
+  color: #252525;
+  background-color: #dadada;
 }
 
 .night {
-  color: white;
-  background-color: black;
+  color: #dadada;
+  background-color: #252525;
 }
 
 .rainbow {

@@ -3,8 +3,8 @@ module.exports = {
     [
       'poi/babel',
       {
-        jsx: 'preact'
-      }
-    ]
-  ]
+        jsx: 'preact',
+      },
+    ],
+  ],
 }

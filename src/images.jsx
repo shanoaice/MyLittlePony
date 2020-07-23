@@ -43,10 +43,10 @@ const pictures = {
   Trixie,
   'Diamond Tiara': DiamondTiara,
   'Silver Spoon': SilverSpoon,
-  Discord
+  Discord,
 }
 
-export default function(name) {
+export default function (name) {
   return () => {
     return <img src={pictures[name]} alt={name} />
   }
