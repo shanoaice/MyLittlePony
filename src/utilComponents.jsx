@@ -27,12 +27,22 @@ Button.defaultProps = {
 }
 
 export const Header = ({ children }) => {
-  return <header className={`${styles.header} padded`}>{children}</header>
+  return (
+    <header
+      className={`${styles.header} padded ${styles.shadow} ${styles.round}`}
+    >
+      {children}
+    </header>
+  )
 }
 
 export const Contnent = ({ isNight, children }) => {
   return (
-    <main className={`${styles.main} ${isNight ? styles.night : styles.day}`}>
+    <main
+      className={`${styles.main} ${isNight ? styles.night : styles.day} ${
+        styles.round
+      } ${styles.shadow}`}
+    >
       {children}
     </main>
   )
@@ -47,15 +57,27 @@ Contnent.defaultProps = {
 }
 
 export const LSidebar = ({ children }) => {
-  return <div className={styles.left}>{children}</div>
+  return (
+    <div className={`${styles.left} ${styles.round} ${styles.shadow}`}>
+      {children}
+    </div>
+  )
 }
 
 export const RSidebar = ({ children }) => {
-  return <div className={styles.right}>{children}</div>
+  return (
+    <div className={`${styles.right} ${styles.round} ${styles.shadow}`}>
+      {children}
+    </div>
+  )
 }
 
 export const Footer = ({ children }) => {
-  return <footer className={styles.footer}>{children}</footer>
+  return (
+    <footer className={`${styles.footer} ${styles.round} ${styles.shadow}`}>
+      {children}
+    </footer>
+  )
 }
 
 export const Link = ({ color, children, to }) => {

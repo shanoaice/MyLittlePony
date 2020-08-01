@@ -1,3 +1,11 @@
+.round {
+  border-radius: 10px;
+}
+
+.shadow {
+  box-shadow: 0px 0px 10px #666666;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -19,13 +27,11 @@
   align-items: center;
   color: white;
   background: #606060;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px #888888;
 }
 
 .left {
   grid-area: left;
-  background-color: #c0c0dd;
+  background-color: #b3b3d6;
   overflow: auto;
   &::-webkit-scrollbar {
     width: 16px;
@@ -39,16 +45,11 @@
     background-color: rgb(135, 124, 139);
     border-radius: 10px;
   }
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px #888888;
 }
 
 .main {
   grid-area: main;
-  border: 2px solid blue;
   padding: 1em 2em;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px #888888;
 }
 
 .right {
@@ -58,8 +59,6 @@
   display: flex;
   background-color: palevioletred;
   color: blue;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px #888888;
 }
 
 .footer {
@@ -69,8 +68,6 @@
   align-items: center;
   background: #606060;
   color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px #888888;
 }
 
 .button {
